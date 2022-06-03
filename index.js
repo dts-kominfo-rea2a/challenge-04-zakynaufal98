@@ -8,7 +8,18 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dates, index) => {
+  let konversiEpoch = [];
+
+  for (let index = 0; index < dates.length; index++) {
+    konversiEpoch.push(Date.parse(dates[index]));
+    konversiEpoch[index] = konversiEpoch[index] / 1000;
+  }
+
+  if (index != null) {
+    return konversiEpoch[index].toString();
+  } else return konversiEpoch.sort().join("-").toString();
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
